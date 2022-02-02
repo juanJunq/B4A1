@@ -27,6 +27,28 @@ class Empresa{
             }
         }
     }
+    public void cadastraFunc(Departamento dep, String nome, int data, double salario){
+        Funcionario func = new Funcionario();
+        func.nome = nome;
+        func.data = data;
+        func.salario = salario;
+        for (int i = 0; i < 100; i++) {
+            if (dep.func[i] == null){
+                dep.func[i] = func;
+            }
+        }
+    }
+    public void Aumento(Departamento dep){
+        for (int i = 0; i < 100; i++) {
+            if (dep.func[i] != null) {
+                dep.func[i].salario += dep.func[i].salario * 0.1;
+            }
+        }
+    }
+    public void Transferir(Departamento dep1, Departamento dep2) {
+        dep1.func[0] = dep2.func[0];
+        dep1.func[0] = null;
+    }
 }
 
 public class Q2 {
